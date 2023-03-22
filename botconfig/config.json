@@ -1,0 +1,14 @@
+{
+    "bot": {
+        "token": "",
+        "invitacion": "",
+        "clientId": "",
+        "clientSecret": ""
+    },
+    "servidor": {
+        "id": ""
+    },
+    "mongodb": {
+        "uri": "" 
+    }
+}
