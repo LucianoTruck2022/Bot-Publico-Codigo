@@ -1,0 +1,18 @@
+module.exports = {
+    data: {
+        name: `verifi`,
+    },
+    async execute(interaction, client, args) {
+        const rol = args[0];
+
+        return interaction.member.roles
+        .add(rol)
+        .then((member) => 
+        interaction.reply({
+            content: `Has sido verificado ${interaction.user.tag}`, 
+            ephemeral: true
+        }),
+        )
+
+    },
+};

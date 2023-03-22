@@ -1,0 +1,17 @@
+const { ChatInputCommandInteraction, SlashCommandBuilder, PermissionFlagsBits, Client, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } = require(`discord.js`);
+
+module.exports = {
+    data: {
+        name: `ticket-claim`,
+    },
+    async execute(interaction, client) {
+      
+        const embed = new EmbedBuilder()
+        .setTitle("Sistema tickets")
+        .setDescription(`El ticket le pertence a: <@${interaction.user.id}>`)
+        .setColor("Aqua")
+
+        interaction.reply({ embeds: [embed] })
+
+    },
+};

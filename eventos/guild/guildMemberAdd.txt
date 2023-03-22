@@ -1,0 +1,23 @@
+const {EmbedBuilder, GuildMember} = require("discord.js");
+
+module.exports = {
+    name: "guildMemberAdd",
+    execute(member) {
+        const {user, guild} = member;
+        const welcomeChannel = member.guild.channels.cache.get("1061500008844759150");//id del canal
+        //const welcomeMessage = `Bienvenido <@${member.id}> texto `;
+        //const memberRole = "";//id del rol
+
+        const welcomeEmbed = new EmbedBuilder()
+        .setTitle("Welcome TCCR Discord")
+        .setDescription(`Hello <@${member.id}>\n\n\nWelcome to the Transportes CAM CR Discord\n\nPlease read our rules\n<#1030987768152727652>\n, for more information about TCCR, have a look at\nwelcome\nWant to apply? Please read <#985780915324198932>\n\nDo you have questions? Create a ticket at\n<#1030987803456196648>\n\n\nEnjoy your time!`)
+        .setColor(client.color)
+        .setThumbnail(member.user.displayAvatarURL())
+        .addFields({name: `Total de miembros`, value: `${guild.memberCount}`})
+        .setImage(`https://i.imgur.com/RM3QpJO.png`)
+        .setTimestamp();
+
+        welcomeChannel.send({embeds: [welcomeEmbed]});
+        //member.roles.add(memberRole);
+    },
+};
